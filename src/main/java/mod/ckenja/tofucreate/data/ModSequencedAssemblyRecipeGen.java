@@ -2,10 +2,10 @@ package mod.ckenja.tofucreate.data;
 
 import baguchan.tofucraft.registry.TofuItems;
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.Create;
 import com.simibubi.create.content.kinetics.deployer.DeployerApplicationRecipe;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipeBuilder;
 import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
+import mod.ckenja.tofucreate.TofuCreate;
 import net.minecraft.data.PackOutput;
 
 import java.util.function.UnaryOperator;
@@ -30,7 +30,7 @@ public class ModSequencedAssemblyRecipeGen extends CreateRecipeProvider {
 
     protected GeneratedRecipe create(String name, UnaryOperator<SequencedAssemblyRecipeBuilder> transform) {
         GeneratedRecipe generatedRecipe =
-                c -> transform.apply(new SequencedAssemblyRecipeBuilder(Create.asResource(name)))
+                c -> transform.apply(new SequencedAssemblyRecipeBuilder(TofuCreate.prefix(name)))
                         .build(c);
         all.add(generatedRecipe);
         return generatedRecipe;

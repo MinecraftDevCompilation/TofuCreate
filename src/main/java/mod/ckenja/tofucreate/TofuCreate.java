@@ -8,6 +8,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import mod.ckenja.tofucreate.create.BlockPressBehaviour;
 import mod.ckenja.tofucreate.create.SpoutTofu;
 import mod.ckenja.tofucreate.register.AllBlocks;
+import mod.ckenja.tofucreate.register.AllCreativeTabs;
 import mod.ckenja.tofucreate.register.AllFluids;
 import mod.ckenja.tofucreate.register.AllItems;
 import net.minecraft.resources.ResourceLocation;
@@ -43,7 +44,7 @@ public class TofuCreate {
         AllFluids.register();
         AllBlocks.register(modEventBus);
         AllItems.ITEMS.register(modEventBus);
-
+        AllCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
         //AllMovementBehaviours.registerBehaviour(AllBlocks.MECHANICAL_PRESS.get(), new BlockPressMovementBehavior());
         //AllMovementBehaviours.registerBehaviour(AllBlocks.SPOUT.get(), new BlockSpoutMovementBehavior());
         //AllRecipeTypes.register(modEventBus);

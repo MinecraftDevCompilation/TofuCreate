@@ -12,6 +12,5 @@ public class AllItems {
     public static final RegistryObject<Item> TOFU_METAL_PLATE = ITEMS.register("tofumetal_plate", () -> new Item((new Item.Properties())));
     public static final RegistryObject<Item> TOFU_PRECISION_MECHANISM = ITEMS.register("tofu_precision_mechanism", () -> new Item((new Item.Properties())));
     public static final RegistryObject<Item> INCOMPLETE_TOFU_PRECISION_MECHANISM = ITEMS.register("incomplete_tofu_precision_mechanism", () -> new Item((new Item.Properties())));
-
 }
 
