@@ -1,0 +1,74 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "tofucreate:tofumetal_plate"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "chance": 120.0,
+      "item": "tofucreate:tofu_precision_mechanism"
+    },
+    {
+      "chance": 8.0,
+      "item": "tofucreate:tofumetal_plate"
+    },
+    {
+      "chance": 2.0,
+      "item": "create:cogwheel"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        },
+        {
+          "item": "tofucraft:tofugem"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        },
+        {
+          "item": "create:cogwheel"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        },
+        {
+          "item": "create:cogwheel"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tofu_precision_mechanism"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "tofucreate:incomplete_tofu_precision_mechanism"
+  }
+}

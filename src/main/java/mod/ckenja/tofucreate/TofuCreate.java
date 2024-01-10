@@ -9,6 +9,8 @@ import mod.ckenja.tofucreate.create.BlockPressBehaviour;
 import mod.ckenja.tofucreate.create.SpoutTofu;
 import mod.ckenja.tofucreate.register.AllBlocks;
 import mod.ckenja.tofucreate.register.AllFluids;
+import mod.ckenja.tofucreate.register.AllItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +20,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import java.util.Locale;
+
 import static com.simibubi.create.api.behaviour.BlockSpoutingBehaviour.addCustomSpoutInteraction;
 
 @Mod(BuildConfig.MODID)
@@ -26,8 +30,10 @@ public class TofuCreate {
     public static final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     public static final IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
     public static final CreateRegistrate registrate = CreateRegistrate.create(BuildConfig.MODID);
+    public static final String MODID = "tofucreate";
+
     public TofuCreate(){
-        addCustomSpoutInteraction(Create.asResource("tofucreate"), new SpoutTofu());
+        addCustomSpoutInteraction(Create.asResource(MODID), new SpoutTofu());
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::enqueueIMC);
         modEventBus.addListener(this::processIMC);
@@ -36,6 +42,7 @@ public class TofuCreate {
         registrate.registerEventListeners(modEventBus);
         AllFluids.register();
         AllBlocks.register(modEventBus);
+        AllItems.ITEMS.register(modEventBus);
 
         //AllMovementBehaviours.registerBehaviour(AllBlocks.MECHANICAL_PRESS.get(), new BlockPressMovementBehavior());
         //AllMovementBehaviours.registerBehaviour(AllBlocks.SPOUT.get(), new BlockSpoutMovementBehavior());
@@ -54,5 +61,9 @@ public class TofuCreate {
 
     private void processIMC(final InterModProcessEvent event) {
         //そもそも名前なんでこんなわかりにくやつなの
+    }
+
+    public static ResourceLocation prefix(String name) {
+        return new ResourceLocation(TofuCreate.MODID, name.toLowerCase(Locale.ROOT));
     }
 }

@@ -7,5 +7,8 @@
   "fluid.tofucreate.soymilk_kinako": "SoyMilk Kinako",
   "fluid.tofucreate.soymilk_pudding": "SoyMilk Pudding",
   "fluid.tofucreate.soymilk_pumpkin": "SoyMilk Pumpkin",
-  "fluid.tofucreate.soymilk_ramune": "SoyMilk Ramune"
+  "fluid.tofucreate.soymilk_ramune": "SoyMilk Ramune",
+  "item.tofucreate.tofumetal_plate": "Tofu Metal Plate",
+  "item.tofucreate.tofu_precision_mechanism": "Tofu Precision Mechanism",
+  "item.tofucreate.incomplete_tofu_precision_mechanism": "Incomplete Tofu Precision Mechanism"
 }

@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "tofucraft:tofumetal"
+    }
+  ],
+  "results": [
+    {
+      "item": "tofucreate:tofumetal_plate"
+    }
+  ]
+}
