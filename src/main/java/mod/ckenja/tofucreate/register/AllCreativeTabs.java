@@ -21,6 +21,8 @@ public class AllCreativeTabs {
             .displayItems((parameters, output) -> {
                 output.acceptAll(Stream.of(
                         AllItems.TOFU_METAL_PLATE,
+                        AllItems.INCOMPLETE_TF_COMPACT_CIRCUIT,
+                        AllItems.TF_COMPACT_CIRCUIT,
                         AllItems.INCOMPLETE_TOFU_PRECISION_MECHANISM,
                         AllItems.TOFU_PRECISION_MECHANISM
                 ).map(sup -> {

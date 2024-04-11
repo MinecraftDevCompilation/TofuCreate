@@ -9,6 +9,8 @@
   "fluid.tofucreate.soymilk_pumpkin": "SoyMilk Pumpkin",
   "fluid.tofucreate.soymilk_ramune": "SoyMilk Ramune",
   "item.tofucreate.tofumetal_plate": "Tofu Metal Plate",
+  "item.tofucreate.tf_compact_circuit": "TF Compact Circuit",
+  "item.tofucreate.incomplete_tf_compact_circuit": "Incomplete TF Compact Circuit",
   "item.tofucreate.tofu_precision_mechanism": "Tofu Precision Mechanism",
   "item.tofucreate.incomplete_tofu_precision_mechanism": "Incomplete Tofu Precision Mechanism",
   "itemGroup.tofucreate": "TofuCreate"

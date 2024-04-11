@@ -15,7 +15,7 @@
     },
     {
       "chance": 2.0,
-      "item": "create:cogwheel"
+      "item": "minecraft:redstone"
     }
   ],
   "sequence": [
@@ -42,7 +42,7 @@
           "item": "tofucreate:incomplete_tofu_precision_mechanism"
         },
         {
-          "item": "create:cogwheel"
+          "item": "minecraft:redstone"
         }
       ],
       "results": [
@@ -58,7 +58,7 @@
           "item": "tofucreate:incomplete_tofu_precision_mechanism"
         },
         {
-          "item": "create:cogwheel"
+          "item": "tofucreate:tf_compact_circuit"
         }
       ],
       "results": [

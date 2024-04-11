@@ -20,6 +20,7 @@ public class ItemModelGenerator extends ItemModelProvider {
     @Override
     protected void registerModels() {
         singleTex(AllItems.TOFU_METAL_PLATE);
+        singleTex(AllItems.TF_COMPACT_CIRCUIT);
         singleTex(AllItems.TOFU_PRECISION_MECHANISM);
         singleTex(AllItems.INCOMPLETE_TOFU_PRECISION_MECHANISM);
     }

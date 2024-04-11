@@ -1,0 +1,71 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "tofucraft:tofuishi"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 120.0,
+      "item": "tofucreate:tf_compact_circuit"
+    },
+    {
+      "chance": 5.0,
+      "item": "tofucraft:tofuishi"
+    },
+    {
+      "chance": 5.0,
+      "item": "minecraft:redstone"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        },
+        {
+          "item": "minecraft:redstone"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        },
+        {
+          "item": "create:electron_tube"
+        }
+      ],
+      "results": [
+        {
+          "item": "tofucreate:incomplete_tf_compact_circuit"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "tofucreate:incomplete_tf_compact_circuit"
+  }
+}

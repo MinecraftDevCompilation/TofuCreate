@@ -9,6 +9,8 @@
   "fluid.tofucreate.soymilk_pumpkin": "かぼちゃ豆乳",
   "fluid.tofucreate.soymilk_ramune": "ラムネ豆乳",
   "item.tofucreate.tofumetal_plate": "豆腐メタルプレート",
+  "item.tofucreate.tf_compact_circuit": "TFコンパクト回路",
+  "item.tofucreate.incomplete_tf_compact_circuit": "未完成のTFコンパクト回路",
   "item.tofucreate.tofu_precision_mechanism": "豆腐精密機構",
   "item.tofucreate.incomplete_tofu_precision_mechanism": "未完成の豆腐精密機構",
   "itemGroup.tofucreate": "豆腐クリエイト"
