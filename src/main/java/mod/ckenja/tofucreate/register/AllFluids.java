@@ -51,7 +51,7 @@ public class AllFluids {
             registrate.virtualFluid("soymilk_ramune", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFF9EC4FB, 0x9EC4FB), VirtualFluid::new)
                     .register();
     public static final FluidEntry<VirtualFluid> SOYOIL =
-            registrate.virtualFluid("soyoil", new ResourceLocation(TofuCraftReload.MODID, "block/soyoil"), new ResourceLocation(TofuCraftReload.MODID, "block/soyoil_flow"), create(0x00FFFFFF, 0x00FFFF), VirtualFluid::new)
+            registrate.virtualFluid("soyoil", new ResourceLocation(TofuCraftReload.MODID, "block/soyoil"), new ResourceLocation(TofuCraftReload.MODID, "block/soyoil_flow"), create(0xFFFFFF00, 0xFFFF00), VirtualFluid::new)
                     .register();
     public static void register() {}
 
