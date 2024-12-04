@@ -1,0 +1,24 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "fluid": "tofucraft:soymilk",
+      "amount": 1000
+    },
+    {
+      "item": "tofucraft:zunda"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "tofucreate:soymilk_zunda",
+      "amount": 1000
+    }
+  ]
+}

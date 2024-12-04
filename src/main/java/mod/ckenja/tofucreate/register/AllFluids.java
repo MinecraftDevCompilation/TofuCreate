@@ -50,8 +50,37 @@ public class AllFluids {
     public static final FluidEntry<VirtualFluid> SOYMILK_RAMUNE =
             registrate.virtualFluid("soymilk_ramune", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFF9EC4FB, 0x9EC4FB), VirtualFluid::new)
                     .register();
+
+    public static final FluidEntry<VirtualFluid> SOYMILK_SAKURA =
+            registrate.virtualFluid("soymilk_sakura", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFFFBCED4, 0xFBCED4), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> SOYMILK_STRAWBERRY =
+            registrate.virtualFluid("soymilk_strawberry", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFFF0A1B4, 0xF0A1B4), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> SOYMILK_TEA =
+            registrate.virtualFluid("soymilk_tea", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFFFACF96, 0xFACF96), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> SOYMILK_ZUNDA =
+            registrate.virtualFluid("soymilk_zunda", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFF93DE49, 0x93DE49), VirtualFluid::new)
+                    .register();
+
     public static final FluidEntry<VirtualFluid> SOYOIL =
-            registrate.virtualFluid("soyoil", new ResourceLocation(TofuCraftReload.MODID, "block/soymilk"), new ResourceLocation(TofuCraftReload.MODID, "block/soymilk_flow"), create(0xFFFFFF00, 0xFFFF00), VirtualFluid::new)
+            registrate.virtualFluid("soyoil", new ResourceLocation("minecraft", "block/water"), new ResourceLocation("minecraft", "block/water_flow"), create(0xFFFFFF00, 0xFFFF00), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> SHROOM =
+            registrate.virtualFluid("shroom", new ResourceLocation("minecraft", "block/water"), new ResourceLocation("minecraft", "block/water_flow"), create(0xFFFEC07B, 0xFEC07B), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> CRIMSON_FLUID =
+            registrate.virtualFluid("crimson_fluid", new ResourceLocation("minecraft", "block/water"), new ResourceLocation("minecraft", "block/water_flow"), create(0xFFB12727, 0xB12727), VirtualFluid::new)
+                    .register();
+
+    public static final FluidEntry<VirtualFluid> WARPED_FLUID =
+            registrate.virtualFluid("warped_fluid", new ResourceLocation("minecraft", "block/water"), new ResourceLocation("minecraft", "block/water_flow"), create(0xFF118066, 0x118066), VirtualFluid::new)
                     .register();
     public static void register() {}
 
