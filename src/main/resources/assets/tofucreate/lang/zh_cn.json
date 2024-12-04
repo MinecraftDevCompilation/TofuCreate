@@ -1,0 +1,18 @@
+{
+  "fluid.tofucreate.soymilk_annin": "杏仁豆奶",
+  "fluid.tofucreate.soymilk_apple": "苹果豆奶",
+  "fluid.tofucreate.soymilk_cocoa": "可可豆奶",
+  "fluid.tofucreate.soymilk_fruits": "混合水果豆奶",
+  "fluid.tofucreate.soymilk_honey": "蜂蜜豆奶",
+  "fluid.tofucreate.soymilk_kinako": "原味豆奶",
+  "fluid.tofucreate.soymilk_pudding": "布丁豆奶",
+  "fluid.tofucreate.soymilk_pumpkin": "南瓜豆奶",
+  "fluid.tofucreate.soymilk_ramune": "弹珠汽水",
+  "fluid.tofucreate.soyoil": "大豆油",
+  "item.tofucreate.tofumetal_plate": "豆腐板",
+  "item.tofucreate.tf_compact_circuit": "豆腐能电路",
+  "item.tofucreate.incomplete_tf_compact_circuit": "豆腐能电路（半成品）",
+  "item.tofucreate.tofu_precision_mechanism": "豆腐精密构件",
+  "item.tofucreate.incomplete_tofu_precision_mechanism": "豆腐精密构件（半成品）",
+  "itemGroup.tofucreate": "豆腐动力"
+}
