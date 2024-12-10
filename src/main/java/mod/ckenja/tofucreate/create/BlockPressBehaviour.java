@@ -37,7 +37,16 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
 
         Level level = getWorld();
         BlockPos worldPosition = getPos();
+        if(level == null || level.isClientSide){
+            return;
+        }
+        if (pressTileEntity.getKineticSpeed() == 0){
+            return;
+        }
         ItemStack result = RecipeHelper.getTofu((ServerLevel) level, level.getBlockState(worldPosition.below(2)).getBlock());
+        if (result == null){
+            return;
+        }
         if(!pressTileEntity.pressingBehaviour.running || level == null){
             if(level != null && !level.isClientSide) {
                 if (pressTileEntity.getKineticSpeed() == 0)
@@ -46,7 +55,6 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                     entityScanCooldown--;
                 if (entityScanCooldown <= 0) {
                     entityScanCooldown = ENTITY_SCAN;
-                    ItemStack result = RecipeHelper.getTofu((ServerLevel) level, level.getBlockState(worldPosition.below(2)).getBlock());
                     if (result != null) {
                         onBlock = true;
                         pressTileEntity.pressingBehaviour.running = true;
@@ -69,7 +77,6 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                 else
                     blockEntity.sendData();
 
-                ItemStack result = RecipeHelper.getTofu((ServerLevel) level, level.getBlockState(worldPosition.below(2)).getBlock());
                 if (result == null)
                     return;
                 if (level.random.nextInt(30) != 0) {
