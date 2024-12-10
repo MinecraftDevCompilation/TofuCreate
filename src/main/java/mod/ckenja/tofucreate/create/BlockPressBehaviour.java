@@ -37,6 +37,7 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
 
         Level level = getWorld();
         BlockPos worldPosition = getPos();
+        ItemStack result = RecipeHelper.getTofu((ServerLevel) level, level.getBlockState(worldPosition.below(2)).getBlock());
         if(!pressTileEntity.pressingBehaviour.running || level == null){
             if(level != null && !level.isClientSide) {
                 if (pressTileEntity.getKineticSpeed() == 0)
