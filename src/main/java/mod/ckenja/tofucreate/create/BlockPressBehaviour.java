@@ -1,10 +1,11 @@
 package mod.ckenja.tofucreate.create;
 
-import baguchan.tofucraft.utils.RecipeHelper;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -37,18 +38,19 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
 
         Level level = getWorld();
         BlockPos worldPosition = getPos();
-        if(level == null || level.isClientSide){
+        if (level == null || level.isClientSide) {
             return;
         }
-        if (pressTileEntity.getKineticSpeed() == 0){
+        if (pressTileEntity.getKineticSpeed() == 0) {
             return;
         }
-        ItemStack result = RecipeHelper.getTofu((ServerLevel) level, level.getBlockState(worldPosition.below(2)).getBlock());
-        if (result == null){
+        
+        Item blockBelow = new level.getBlockState(worldPosition.below(2)).asItem();
+        if (blockBelow == null || blockBelow != "tofucraft:blocktofumomen" || blockBelow != "tofucraft:blocktofuishi") {
             return;
         }
-        if(!pressTileEntity.pressingBehaviour.running || level == null){
-            if(level != null && !level.isClientSide) {
+        if (!pressTileEntity.pressingBehaviour.running || level == null) {
+            if (level != null && !level.isClientSide) {
                 if (pressTileEntity.getKineticSpeed() == 0)
                     return;
                 if (entityScanCooldown > 0)
@@ -84,7 +86,12 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
 
                     return;
                 }
-                level.setBlock(worldPosition.below(2), Block.byItem(result.getItem()).defaultBlockState(), 11);
+                if (blockBelow == "tofucraft:blocktofumomen") {
+                    level.setBlock(worldPosition.below(2), Block.MOMENTOFU.defaultBlockState(), 11);
+                }
+                if (blockBelow == "tofucraft:blocktofuishi") {
+                    level.setBlock(worldPosition.below(2), Block.METALTOFU.defaultBlockState(), 11);
+                }                
                 level.levelEvent(2001, worldPosition.below(2), Block.getId(level.getBlockState(worldPosition.below(2))));
             }
         }
