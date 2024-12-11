@@ -84,7 +84,7 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                     return;
                 }
                 if (blockBelow == TofuBlocks.MOMENTOFU.get()) {
-                    level.setBlock(worldPosition.below(2), TofuBlocks.MOMENTOFU.get().defaultBlockState(), 11);
+                    level.setBlock(worldPosition.below(2), TofuBlocks.ISHITOFU.get().defaultBlockState(), 11);
                 }
                 if (blockBelow == TofuBlocks.ISHITOFU.get()) {
                     level.setBlock(worldPosition.below(2), TofuBlocks.METALTOFU.get().defaultBlockState(), 11);
