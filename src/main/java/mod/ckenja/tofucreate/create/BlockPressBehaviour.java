@@ -1,5 +1,6 @@
 package mod.ckenja.tofucreate.create;
 
+import baguchan.tofucraft.registry.TofuBlocks;
 import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -45,8 +46,8 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
             return;
         }
         
-        Item blockBelow = new level.getBlockState(worldPosition.below(2)).asItem();
-        if (blockBelow == null || blockBelow != "tofucraft:blocktofumomen" || blockBelow != "tofucraft:blocktofuishi") {
+        Block blockBelow = level.getBlockState(worldPosition.below(2));
+        if (blockBelow == null || blockBelow != TofuBlocks.ISHITOFU || blockBelow != TofuBlocks.MOMENTOFU) {
             return;
         }
         if (!pressTileEntity.pressingBehaviour.running || level == null) {
@@ -57,15 +58,13 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                     entityScanCooldown--;
                 if (entityScanCooldown <= 0) {
                     entityScanCooldown = ENTITY_SCAN;
-                    if (result != null) {
-                        onBlock = true;
-                        pressTileEntity.pressingBehaviour.running = true;
-                        pressTileEntity.pressingBehaviour.prevRunningTicks = 0;
-                        pressTileEntity.pressingBehaviour.runningTicks = 0;
-                        pressTileEntity.pressingBehaviour.particleItems.clear();
-                        pressTileEntity.pressingBehaviour.mode.headOffset = 19f / 16f;
-                        blockEntity.sendData();
-                    }
+                    onBlock = true;
+                    pressTileEntity.pressingBehaviour.running = true;
+                    pressTileEntity.pressingBehaviour.prevRunningTicks = 0;
+                    pressTileEntity.pressingBehaviour.runningTicks = 0;
+                    pressTileEntity.pressingBehaviour.particleItems.clear();
+                    pressTileEntity.pressingBehaviour.mode.headOffset = 19f / 16f;
+                    blockEntity.sendData();
                 }
             }
             return;
@@ -79,18 +78,16 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                 else
                     blockEntity.sendData();
 
-                if (result == null)
-                    return;
                 if (level.random.nextInt(30) != 0) {
                     level.levelEvent(2001, worldPosition.below(2), Block.getId(level.getBlockState(worldPosition.below(2))));
 
                     return;
                 }
-                if (blockBelow == "tofucraft:blocktofumomen") {
-                    level.setBlock(worldPosition.below(2), Block.MOMENTOFU.defaultBlockState(), 11);
+                if (blockBelow == TofuBlocks.MOMENTOFU) {
+                    level.setBlock(worldPosition.below(2), TofuBlocks.MOMENTOFU.defaultBlockState(), 11);
                 }
-                if (blockBelow == "tofucraft:blocktofuishi") {
-                    level.setBlock(worldPosition.below(2), Block.METALTOFU.defaultBlockState(), 11);
+                if (blockBelow == TofuBlocks.ISHITOFU) {
+                    level.setBlock(worldPosition.below(2), TofuBlocks.METALTOFU.defaultBlockState(), 11);
                 }                
                 level.levelEvent(2001, worldPosition.below(2), Block.getId(level.getBlockState(worldPosition.below(2))));
             }
