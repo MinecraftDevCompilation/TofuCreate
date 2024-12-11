@@ -46,8 +46,8 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
             return;
         }
         
-        Block blockBelow = level.getBlockState(worldPosition.below(2));
-        if (blockBelow == null || blockBelow != TofuBlocks.ISHITOFU || blockBelow != TofuBlocks.MOMENTOFU) {
+        Block blockBelow = Block.getId(level.getBlockState(worldPosition.below(2)));
+        if (blockBelow == null || blockBelow != TofuBlocks.ISHITOFU.get() || blockBelow != TofuBlocks.MOMENTOFU.get()) {
             return;
         }
         if (!pressTileEntity.pressingBehaviour.running || level == null) {
@@ -84,10 +84,10 @@ public class BlockPressBehaviour extends BlockEntityBehaviour {
                     return;
                 }
                 if (blockBelow == TofuBlocks.MOMENTOFU) {
-                    level.setBlock(worldPosition.below(2), TofuBlocks.MOMENTOFU.defaultBlockState(), 11);
+                    level.setBlock(worldPosition.below(2), TofuBlocks.MOMENTOFU.get().defaultBlockState(), 11);
                 }
                 if (blockBelow == TofuBlocks.ISHITOFU) {
-                    level.setBlock(worldPosition.below(2), TofuBlocks.METALTOFU.defaultBlockState(), 11);
+                    level.setBlock(worldPosition.below(2), TofuBlocks.METALTOFU.get().defaultBlockState(), 11);
                 }                
                 level.levelEvent(2001, worldPosition.below(2), Block.getId(level.getBlockState(worldPosition.below(2))));
             }
