@@ -3,10 +3,7 @@ package mod.ckenja.tofucreate;
 import com.mojang.logging.LogUtils;
 import com.simibubi.create.Create;
 import com.simibubi.create.api.event.BlockEntityBehaviourEvent;
-import com.simibubi.create.content.kinetics.press.MechanicalPressBlockEntity;
 import com.simibubi.create.foundation.data.CreateRegistrate;
-import mod.ckenja.tofucreate.create.BlockPressBehaviour;
-import mod.ckenja.tofucreate.create.SpoutTofu;
 import mod.ckenja.tofucreate.register.AllBlocks;
 import mod.ckenja.tofucreate.register.AllCreativeTabs;
 import mod.ckenja.tofucreate.register.AllFluids;
@@ -23,8 +20,6 @@ import org.slf4j.Logger;
 
 import java.util.Locale;
 
-import static com.simibubi.create.api.behaviour.BlockSpoutingBehaviour.addCustomSpoutInteraction;
-
 @Mod(BuildConfig.MODID)
 public class TofuCreate {
     public static final Logger LOGGER = LogUtils.getLogger();
@@ -34,12 +29,9 @@ public class TofuCreate {
     public static final String MODID = "tofucreate";
 
     public TofuCreate(){
-        addCustomSpoutInteraction(Create.asResource(MODID), new SpoutTofu());
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::enqueueIMC);
         modEventBus.addListener(this::processIMC);
-        forgeEventBus.addGenericListener(MechanicalPressBlockEntity.class, (BlockEntityBehaviourEvent<MechanicalPressBlockEntity> event) -> event
-                .attach(new BlockPressBehaviour(event.getBlockEntity())));
         registrate.registerEventListeners(modEventBus);
         AllFluids.register();
         AllBlocks.register(modEventBus);
